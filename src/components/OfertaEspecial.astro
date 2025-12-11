@@ -1,0 +1,142 @@
+---
+import Check from "./icons/Check.astro";
+
+// Props opcionales para personalizar
+interface Props {
+  badge?: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  features?: string[];
+  price?: string;
+  priceLabel?: string;
+  duration?: string;
+  buttonText?: string;
+}
+
+const {
+  badge = "OFERTA POR TIEMPO LIMITADO",
+  title = "Acelera Tu Educación:",
+  subtitle = "Primaria y Secundaria",
+  description = "Completa tu Primaria o Secundaria en tiempo récord. Nuestro programa intensivo está diseñado para personas ocupadas que quieren resultados rápidos.",
+  features = [
+    "Solo 10 semanas de duración",
+    "Certificación completa incluida",
+    "Opciones de pago flexibles",
+  ],
+  price = "$250.00",
+  priceLabel = "PRECIO ESPECIAL",
+  duration = "por semana / 10 semanas",
+  buttonText = "Obtener Oferta",
+} = Astro.props;
+---
+
+<section
+  class="bg-linear-to-br from-teal-300 via-teal-400 to-cyan-400 py-12 md:py-16 lg:py-20 px-4 md:px-8"
+>
+  <div class="max-w-7xl mx-auto">
+    <!-- Tarjeta principal -->
+    <div class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 lg:p-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <!-- Contenido Izquierdo -->
+        <div class="space-y-6">
+          <!-- Badge -->
+          <div class="inline-block">
+            <span
+              class="bg-emerald-950 text-cyan-400 text-xs md:text-sm font-semibold px-6 py-2.5 rounded-full tracking-wider"
+            >
+              {badge}
+            </span>
+          </div>
+
+          <!-- Título -->
+          <div>
+            <h2
+              class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-950 leading-tight"
+            >
+              {title}
+            </h2>
+            <h3
+              class="text-3xl md:text-4xl lg:text-5xl font-bold text-emerald-700 leading-tight mt-1"
+            >
+              {subtitle}
+            </h3>
+          </div>
+
+          <!-- Descripción -->
+          <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+            {description}
+          </p>
+
+          <!-- Lista de características -->
+          <div class="space-y-4 pt-2 text-emerald-950">
+            {
+              features.map((feature) => (
+                <div class="flex items-start gap-3">
+                  <div class="shrink-0 mt-1">
+                    <Check />
+                  </div>
+                  <span class="text-base md:text-lg text-emerald-950 font-medium">
+                    {feature}
+                  </span>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Tarjeta de Precio Derecha -->
+        <div class="flex justify-center lg:justify-end rotate-6">
+          <div class="w-full max-w-md">
+            <div
+              class="border-4 border-emerald-900 rounded-3xl bg-white p-8 md:p-10 shadow-xl transform hover:scale-105 transition-transform duration-300"
+            >
+              <!-- Etiqueta de precio -->
+              <div class="text-center mb-4">
+                <p
+                  class="text-sm md:text-base text-emerald-950 font-semibold tracking-wider"
+                >
+                  {priceLabel}
+                </p>
+              </div>
+
+              <!-- Precio -->
+              <div class="text-center mb-2">
+                <p
+                  class="text-5xl md:text-6xl lg:text-7xl font-bold text-emerald-950"
+                >
+                  {price}
+                </p>
+              </div>
+
+              <!-- Duración -->
+              <div class="text-center mb-8">
+                <p class="text-sm md:text-base text-emerald-950 font-medium">
+                  {duration}
+                </p>
+              </div>
+
+              <!-- Botón CTA -->
+              <a href="#"
+                ><button
+                  class="w-full cursor-pointer bg-emerald-950 hover:bg-emerald-900 text-white font-bold text-base md:text-lg py-4 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  {buttonText}
+                </button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Efecto de sombra adicional para la tarjeta de precio */
+  @media (min-width: 1024px) {
+    .border-gray-900 {
+      box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.1);
+    }
+  }
+</style>
