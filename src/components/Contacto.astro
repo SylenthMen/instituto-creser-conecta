@@ -1,0 +1,223 @@
+---
+interface Props {
+  whatsappNumber?: string; // Número de WhatsApp sin símbolos, ej: "5215512345678"
+}
+
+const { whatsappNumber = "528138959780" } = Astro.props;
+
+const programas = [
+  "Educación Primaria",
+  "Educación Secundaria",
+  "Continuación de Bachillerato",
+  "Bachillerato en Línea",
+];
+---
+
+<section id="contacto" class="bg-gray-100 py-12 md:py-16 lg:py-20 px-4 md:px-8">
+  <div class="max-w-2xl mx-auto">
+    <!-- Encabezado -->
+    <div class="text-center mb-8 md:mb-12">
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+        Comienza Tu Viaje Hoy
+      </h2>
+      <p
+        class="text-base md:text-lg text-gray-600 max-w-xl mx-auto leading-relaxed"
+      >
+        Completa el formulario a continuación y un asesor educativo se pondrá en
+        contacto contigo para discutir tus opciones.
+      </p>
+    </div>
+
+    <!-- Formulario -->
+    <div class="bg-white rounded-3xl shadow-xl p-8 md:p-10 lg:p-12">
+      <form id="contactForm" class="space-y-6">
+        <!-- Nombre y Teléfono en grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Nombre Completo -->
+          <div>
+            <label
+              for="nombre"
+              class="block text-sm font-semibold text-gray-900 mb-2"
+            >
+              Nombre Completo
+            </label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Juan Pérez"
+              required
+              class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+            />
+          </div>
+
+          <!-- Número de Teléfono -->
+          <div>
+            <label
+              for="telefono"
+              class="block text-sm font-semibold text-gray-900 mb-2"
+            >
+              Número de Teléfono
+            </label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="(555) 123-4567"
+              required
+              class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+            />
+          </div>
+        </div>
+
+        <!-- Correo Electrónico -->
+        <div>
+          <label
+            for="email"
+            class="block text-sm font-semibold text-gray-900 mb-2"
+          >
+            Correo Electrónico
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="juan@ejemplo.com"
+            required
+            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all"
+          />
+        </div>
+
+        <!-- Programa de Interés -->
+        <div>
+          <label
+            for="programa"
+            class="block text-sm font-semibold text-gray-900 mb-2"
+          >
+            Programa de Interés
+          </label>
+          <div class="relative">
+            <select
+              id="programa"
+              name="programa"
+              required
+              class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 appearance-none focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all cursor-pointer"
+            >
+              <option value="" disabled selected
+                >Seleccione un programa...</option
+              >
+              {
+                programas.map((programa) => (
+                  <option value={programa}>{programa}</option>
+                ))
+              }
+            </select>
+            <div
+              class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none"
+            >
+              <svg
+                class="w-5 h-5 text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mensaje Opcional -->
+        <div>
+          <label
+            for="mensaje"
+            class="block text-sm font-semibold text-gray-900 mb-2"
+          >
+            Mensaje (Opcional)
+          </label>
+          <textarea
+            id="mensaje"
+            name="mensaje"
+            rows="4"
+            placeholder="Estoy interesado en..."
+            class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition-all resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Botón de Envío -->
+        <button
+          type="submit"
+          class="w-full bg-gray-900 hover:bg-gray-800 text-white font-bold text-base md:text-lg py-4 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+        >
+          Enviar Solicitud
+        </button>
+
+        <!-- Texto legal pequeño -->
+        <p class="text-xs text-gray-500 text-center mt-4">
+          Al hacer clic en enviar, aceptas recibir comunicaciones del Instituto
+          CreSer Conecta.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script define:vars={{ whatsappNumber }}>
+  const form = document.getElementById("contactForm");
+
+  form?.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Obtener valores del formulario
+    const formData = new FormData(form);
+    const nombre = formData.get("nombre");
+    const telefono = formData.get("telefono");
+    const email = formData.get("email");
+    const programa = formData.get("programa");
+    const mensaje = formData.get("mensaje") || "Sin mensaje adicional";
+
+    // Crear mensaje para WhatsApp
+    const whatsappMessage = `
+*Nueva Solicitud de Información*
+
+*Nombre:* ${nombre}
+*Teléfono:* ${telefono}
+*Email:* ${email}
+*Programa de Interés:* ${programa}
+*Mensaje:* ${mensaje}
+    `.trim();
+
+    // Codificar el mensaje para URL
+    const encodedMessage = encodeURIComponent(whatsappMessage);
+
+    // Crear URL de WhatsApp
+    const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+    // Abrir WhatsApp en nueva pestaña
+    window.open(whatsappURL, "_blank");
+
+    // Opcional: Limpiar formulario después de enviar
+    form.reset();
+
+    // Opcional: Mostrar mensaje de confirmación
+    alert("¡Gracias! Serás redirigido a WhatsApp para completar tu solicitud.");
+  });
+</script>
+
+<style>
+  /* Estilos personalizados para el select en diferentes navegadores */
+  select::-ms-expand {
+    display: none;
+  }
+
+  /* Mejorar apariencia en Safari */
+  input,
+  textarea,
+  select {
+    -webkit-appearance: none;
+  }
+</style>

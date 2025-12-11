@@ -1,0 +1,74 @@
+---
+import Medalla from "./icons/Medalla.astro";
+import Usuarios from "./icons/Usuarios.astro";
+---
+
+<section class="py-20 bg-white border-t border-gray-100">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div
+        class="relative rounded-3xl overflow-hidden aspect-video md:aspect-square lg:aspect-4/3"
+        data-alt="Grupo de diversos estudiantes estudiando juntos al aire libre en el campus"
+      >
+        <img
+          alt="Vida en el campus"
+          class="w-full h-full object-cover"
+          src="/estudiantegraduada.webp"
+        />
+        <div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+      </div>
+      <div>
+        <span
+          class="text-primary font-bold tracking-wider text-sm uppercase mb-2 block"
+          >Éxito Estudiantil</span
+        >
+        <h2 class="text-3xl font-bold text-gray-900 mb-6">
+          Historias Reales, Crecimiento Real.
+        </h2>
+        <blockquote class="text-xl text-gray-600 font-medium italic mb-8">
+          "Nunca pensé que podría terminar el bachillerato mientras trabajaba a
+          tiempo completo. Instituto Creser lo hizo posible con sus programas de
+          fin de semana. ¡Ahora estoy aplicando a la universidad!"
+        </blockquote>
+        <div class="flex items-center gap-4">
+          <div
+            class="h-12 w-12 rounded-full bg-gray-200 overflow-hidden"
+            data-alt="Retrato de María G., una graduada exitosa"
+          >
+            <img
+              alt="Maria G."
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbB9sTvGysnnOhypd6bzLNGwydPqNyQrSYr4ECNM39cYEPfEC4UGEdEJ-uugi_3W6YlLqilyjzn3qbCuvfXdlUP3dL07rP4qNalrOsilGTJZhBv0cAIAmZ3L_Rufx6gSNLLyoAScQcYXWyeAeDe-4rBY8lKsFG6LrDb9l4LFAl0TROKeoAIq1R_a-aWY6f_T8jIKvDBGD4PqW9AvhB9dLMBYsjY3JviVmK1KMaxvzmZBiFsyp--5Go5xVYfsaKTwf50lH2AzmTrBM"
+            />
+          </div>
+          <div>
+            <p class="text-gray-900 font-bold">María González</p>
+            <p class="text-primary text-sm">Clase de 2023</p>
+          </div>
+        </div>
+        <div class="mt-10 grid grid-cols-2 gap-6">
+          <div
+            class="bg-background-light p-4 rounded-xl border border-gray-200"
+          >
+            <span class="material-symbols-outlined text-primary mb-2 text-3xl"
+              ><Medalla /></span
+            >
+            <h4 class="text-gray-900 font-bold">Certificado</h4>
+            <p class="text-xs text-gray-500">Reconocido por la SEP</p>
+          </div>
+          <div
+            class="bg-background-light p-4 rounded-xl border border-gray-200"
+          >
+            <span class="material-symbols-outlined text-primary mb-2 text-3xl"
+              ><Usuarios /></span
+            >
+            <h4 class="text-gray-900 font-bold">Comunidad</h4>
+            <p class="text-xs text-gray-500">
+              Únete a una red de estudiantes ambiciosos
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
