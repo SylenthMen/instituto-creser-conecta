@@ -39,7 +39,7 @@ import Laptop from "./icons/Laptop.astro";
             <span
               class="inline-flex items-center rounded-full bg-cyan-400/30 px-2.5 py-0.5 text-xs font-bold text-emerald-950"
             >
-              Oferta
+              50% de Descuento
             </span>
           </div>
           <p class="text-sm text-gray-500 mb-6 grow">
@@ -65,7 +65,7 @@ import Laptop from "./icons/Laptop.astro";
             aria-controls="detalles-primaria"
             aria-expanded="false"
           >
-            Ver Detalles
+            Descubrir Ventajas
           </button>
 
           <div
@@ -74,16 +74,86 @@ import Laptop from "./icons/Laptop.astro";
           >
             <!-- Aquí añadirás los 10 detalles; ejemplo de placeholders -->
             <ul class="list-disc pl-5 space-y-1">
-              <li>Detalle 1: Información adicional sobre el curso.</li>
-              <li>Detalle 2: Requisitos previos.</li>
-              <li>Detalle 3: Materiales incluidos.</li>
-              <li>Detalle 4: Calendario de sesiones.</li>
-              <li>Detalle 5: Modalidad de evaluación.</li>
-              <li>Detalle 6: Tutorías disponibles.</li>
-              <li>Detalle 7: Actividades prácticas.</li>
-              <li>Detalle 8: Contacto del coordinador.</li>
-              <li>Detalle 9: Posibilidades de beca.</li>
-              <li>Detalle 10: Fecha de inicio estimada.</li>
+              <li>
+                Terminas en tiempo récord:
+
+                <p>
+                  • Completa toda tu primaria en solo 10 semanas, mucho más
+                  rápido que en cualquier modalidad tradicional.
+                </p>
+                <p>
+                  • Ideal para quienes necesitan regularizarse o avanzar rápido
+                  por temas laborales o personales.
+                </p>
+              </li>
+              <li>
+                Costo accesible
+                <p>
+                  • Inversión baja en comparación con escuelas presenciales.
+                </p>
+                <p>• Ahorras en transporte, materiales y tiempo.</p>
+              </li>
+              <li>
+                Sin exámenes
+                <p>• No hay estrés, presiones ni evaluaciones tradicionales.</p>
+                <p>
+                  • El aprendizaje es práctico y guiado, con acompañamiento
+                  constante.
+                </p>
+              </li>
+              <li>
+                Aprobación 100% garantizada.
+                <p>
+                  • El sistema está diseñado para que todos los estudiantes
+                  concluyan y obtengan su certificado.
+                </p>
+                <p>• Soporte personalizado para asegurar tu avance.</p>
+              </li>
+              <li>
+                Estudia desde cualquier lugar.
+                <p>• Solo necesitas un celular, tablet o computadora.</p>
+                <p>• Perfecto si trabajas o tienes horario limitado.</p>
+              </li>
+              <li>
+                Horarios totalmente flexibles.
+                <p>
+                  • Tú decides cuándo estudiar: mañana, tarde, noche o fines de
+                  semana.
+                </p>
+                <p>• Compatible con cualquier rutina diaria.</p>
+              </li>
+              <li>
+                Plataforma fácil de usar.
+                <p>
+                  • Contenido claro, accesible y diseñado para todas las edades.
+                </p>
+                <p>
+                  • Ideal para adultos que buscan terminar su educación básica
+                  sin complicaciones.
+                </p>
+              </li>
+              <li>
+                Acompañamiento personalizado.
+                <p>• Asesoría durante todo el proceso.</p>
+                <p>
+                  • Resuelves dudas por chat, videollamada o mensajes, según la
+                  institución.
+                </p>
+              </li>
+              <li>
+                Documento oficial y válido.
+                <p>
+                  Certificado con validez oficial para continuar con secundaria
+                  o cumplir requisitos laborales.
+                </p>
+              </li>
+              <li>
+                Avance rápido y motivador.
+                <p>
+                  • Ver resultados en poco tiempo mantiene alta la motivación.
+                </p>
+                <p>• Sin tareas complicadas ni procesos largos</p>
+              </li>
             </ul>
           </div>
         </div>
@@ -107,7 +177,7 @@ import Laptop from "./icons/Laptop.astro";
             <span
               class="inline-flex items-center rounded-full bg-cyan-400/30 px-2.5 py-0.5 text-xs font-bold text-primary"
             >
-              Oferta
+              50% de Descuento
             </span>
           </div>
           <p class="text-sm text-gray-500 mb-6 grow">
@@ -340,7 +410,7 @@ import Laptop from "./icons/Laptop.astro";
       btn.addEventListener("click", () => {
         const isOpen = target.classList.toggle("open");
         btn.setAttribute("aria-expanded", String(isOpen));
-        btn.textContent = isOpen ? "Ocultar detalles" : "Ver Detalles";
+        btn.textContent = isOpen ? "Ocultar ventajas" : "Descubrir Ventajas";
         // If opening, scroll a little so the content is visible on small screens
         if (isOpen) {
           setTimeout(() => {
