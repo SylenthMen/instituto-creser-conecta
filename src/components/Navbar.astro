@@ -27,10 +27,12 @@ import Birrete from "./icons/Birrete.astro";
     <!-- Centered links (hidden on small screens) -->
     <div class="flex-1 flex justify-center">
       <div class="hidden md:flex items-center gap-8 text-gray-900">
-        <a class="hover:text-green-950" href="#">Inicio</a>
-        <a class="hover:text-green-950" href="#">Programas</a>
-        <a class="hover:text-green-950" href="#">Oferta Especial</a>
-        <a class="hover:text-green-950" href="#">Contacto</a>
+        <a class="hover:text-green-950" href="#inicio">Inicio</a>
+        <a class="hover:text-green-950" href="#ofertaespecial"
+          >Oferta Especial</a
+        >
+        <a class="hover:text-green-950" href="#programas">Programas</a>
+        <a class="hover:text-green-950" href="#contacto">Contacto</a>
       </div>
     </div>
 
@@ -67,13 +69,18 @@ import Birrete from "./icons/Birrete.astro";
   <!-- Mobile menu: shown when #nav-toggle is checked -->
   <div class="peer-checked:block hidden md:hidden border-t bg-white">
     <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
-      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Inicio</a>
-      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Programas</a>
-      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Oferta Especial</a>
-      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Contacto</a>
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#inicio">Inicio</a>
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#ofertaespecial"
+        >Oferta Especial</a
+      >
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#programas"
+        >Programas</a
+      >
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#contacto">Contacto</a
+      >
       <a
         class="mt-2 py-3 px-4 bg-green-950 text-white rounded text-center font-bold"
-        href="#">Regístrate Ahora</a
+        href="#contacto">Regístrate Ahora</a
       >
     </div>
   </div>

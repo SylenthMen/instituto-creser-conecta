@@ -1,0 +1,353 @@
+---
+import Billete from "./icons/Billete.astro";
+import Birrete from "./icons/Birrete.astro";
+import Calendario from "./icons/Calendario.astro";
+import Check from "./icons/Check.astro";
+import Laptop from "./icons/Laptop.astro";
+---
+
+<section class="py-24 bg-background-light" id="programas">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4">
+        Elige Tu Camino
+      </h2>
+      <p class="text-lg text-gray-600">
+        Ofrecemos programas integrales adaptados a tu nivel educativo actual.
+        Empieza donde estás y te ayudaremos a llegar a donde quieres estar.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div
+        class="group flex flex-col bg-white rounded-4xl p-2 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      >
+        <div
+          class="h-48 w-full rounded-3xl bg-gray-100 overflow-hidden mb-4"
+          data-alt="Joven estudiante escribiendo en un cuaderno con concentración"
+        >
+          <img
+            alt="Concepto de educación primaria"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            src="/primaria.webp"
+          />
+        </div>
+        <div class="px-4 pb-6 flex flex-1 flex-col">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-emerald-950">
+              Educación Primaria
+            </h3>
+            <span
+              class="inline-flex items-center rounded-full bg-cyan-400/30 px-2.5 py-0.5 text-xs font-bold text-emerald-950"
+            >
+              Oferta
+            </span>
+          </div>
+          <p class="text-sm text-gray-500 mb-6 grow">
+            Construye una base sólida. Nuestro programa acelerado de primaria
+            cubre habilidades esenciales en lectura, matemáticas y ciencias.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-600 gap-2">
+              <Check />
+              10 Semanas de Duración
+            </div>
+            <div class="flex items-center text-sm text-gray-600 gap-2">
+              <span>
+                <Billete />
+              </span>
+              $250.00 por semana
+            </div>
+          </div>
+          <button
+            class="w-full rounded-xl border-2 border-emerald-950/10 bg-transparent py-2.5 text-sm font-bold text-primary hover:bg-emerald-950 hover:text-white transition-colors"
+            data-toggle="details"
+            data-target="detalles-primaria"
+            aria-controls="detalles-primaria"
+            aria-expanded="false"
+          >
+            Ver Detalles
+          </button>
+
+          <div
+            id="detalles-primaria"
+            class="details-content mt-4 text-sm text-gray-600"
+          >
+            <!-- Aquí añadirás los 10 detalles; ejemplo de placeholders -->
+            <ul class="list-disc pl-5 space-y-1">
+              <li>Detalle 1: Información adicional sobre el curso.</li>
+              <li>Detalle 2: Requisitos previos.</li>
+              <li>Detalle 3: Materiales incluidos.</li>
+              <li>Detalle 4: Calendario de sesiones.</li>
+              <li>Detalle 5: Modalidad de evaluación.</li>
+              <li>Detalle 6: Tutorías disponibles.</li>
+              <li>Detalle 7: Actividades prácticas.</li>
+              <li>Detalle 8: Contacto del coordinador.</li>
+              <li>Detalle 9: Posibilidades de beca.</li>
+              <li>Detalle 10: Fecha de inicio estimada.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group flex flex-col bg-white rounded-4xl p-2 border border-gray-100 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      >
+        <div
+          class="h-48 w-full rounded-3xl bg-gray-100 overflow-hidden mb-4"
+          data-alt="Estudiantes discutiendo un proyecto alrededor de una mesa"
+        >
+          <img
+            alt="Concepto de educación secundaria"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            src="/secundaria.webp"
+          />
+        </div>
+        <div class="px-4 pb-6 flex flex-1 flex-col">
+          <div class="flex justify-between items-start mb-2">
+            <h3 class="text-xl font-bold text-primary">Educación Secundaria</h3>
+            <span
+              class="inline-flex items-center rounded-full bg-cyan-400/30 px-2.5 py-0.5 text-xs font-bold text-primary"
+            >
+              Oferta
+            </span>
+          </div>
+          <p class="text-sm text-gray-500 mb-6 grow">
+            Avanza en tu conocimiento. Prepárate para el bachillerato con
+            nuestro plan de estudios enfocado en materias básicas.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-600 gap-2">
+              <Check />
+              10 Semanas de Duración
+            </div>
+            <div class="flex items-center text-sm text-gray-600 gap-2">
+              <span>
+                <Billete />
+              </span>
+              $250.00 por semana
+            </div>
+          </div>
+          <button
+            class="w-full rounded-xl border-2 border-emerald-950/10 bg-transparent py-2.5 text-sm font-bold text-primary hover:bg-emerald-950 hover:text-white transition-colors"
+            data-toggle="details"
+            data-target="detalles-secundaria"
+            aria-controls="detalles-secundaria"
+            aria-expanded="false"
+          >
+            Descubrir Ventajas
+          </button>
+
+          <div
+            id="detalles-secundaria"
+            class="details-content mt-4 text-sm text-gray-600"
+          >
+            <!-- Aquí añadirás los 10 detalles; ejemplo de placeholders secundaria -->
+            <ul class="list-disc pl-5 space-y-1">
+              <li>
+                Terminas rápido En solo 10 semanas puedes obtener tu
+                certificado, sin perder años en el proceso.
+              </li>
+              <li>
+                Sin exámenes estresantes Aprendes sin presión de evaluaciones
+                tradicionales, ideal si hace tiempo que no estudias.
+              </li>
+              <li>
+                100% en línea Estudias desde casa, trabajo o cualquier lugar con
+                internet.
+              </li>
+              <li>
+                Horarios totalmente flexibles Tú decides cuándo avanzar,
+                perfecto si trabajas o tienes familia.
+              </li>
+              <li>
+                Ideal para adultos El programa está diseñado específicamente
+                para personas mayores que desean terminar su secundaria.
+              </li>
+              <li>
+                Avance a tu propio ritmo No dependes de grupos, puedes avanzar
+                más rápido según tu disponibilidad.
+              </li>
+              <li>
+                Mejoras tus oportunidades laborales Tener secundaria concluida
+                te permite aspirar a mejores empleos y sueldos.
+              </li>
+              <li>
+                Acceso a preparatoria y universidad Es el primer paso para
+                seguir estudiando una carrera o un oficio técnico.
+              </li>
+              <li>
+                Ahorro de tiempo y dinero Sin traslados, sin uniformes, sin
+                gastos extras.
+              </li>
+              <li>
+                Certificado con validez oficial Tu documento tiene
+                reconocimiento legal, válido para trabajos y trámites.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div
+        class="group flex flex-col bg-emerald-950 rounded-4xl p-2 border border-cyan-400 relative overflow-hidden transition-all duration-300 hover:-translate-y-1 ring-4 ring-secondary/50"
+      >
+        <div class="absolute top-0 right-0 p-4 z-10">
+          <span
+            class="bg-cyan-400 text-emerald-950 text-xs font-bold px-3 py-1 rounded-full"
+            >MÁS POPULAR</span
+          >
+        </div>
+        <div
+          class="h-48 w-full rounded-3xl bg-gray-800 overflow-hidden mb-4"
+          data-alt="estudiantes platicando recargados en un automovil"
+        >
+          <img
+            alt="Concepto de graduación de bachillerato"
+            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+            src="bachillerato.webp"
+          />
+        </div>
+        <div class="px-4 pb-6 flex flex-1 flex-col">
+          <h3 class="text-xl font-bold text-white mb-2">
+            Continuación de Bachillerato
+          </h3>
+          <p class="text-sm text-gray-300 mb-6 grow">
+            Obtén tu diploma de Bachillerato. Horarios flexibles diseñados para
+            adultos que trabajan. Abre puertas a la universidad y mejores
+            empleos.
+          </p>
+          <div class="space-y-3 mb-6">
+            <div class="flex items-center text-sm text-gray-200">
+              <span
+                class="material-symbols-outlined text-cyan-400 mr-2 text-[20px]"
+                ><Birrete /></span
+              >
+              Diploma Certificado por la SEP
+            </div>
+            <div class="flex items-center text-sm text-gray-200">
+              <span
+                class="material-symbols-outlined text-cyan-400 mr-2 text-[20px]"
+                ><Calendario /></span
+              >
+              Horarios Flexibles
+            </div>
+            <div class="flex items-center text-sm text-gray-200">
+              <span
+                class="material-symbols-outlined text-cyan-400 mr-2 text-[20px]"
+                ><Laptop /></span
+              >
+              En línea y Presencial
+            </div>
+          </div>
+          <button
+            class="w-full rounded-xl bg-cyan-400 py-2.5 text-sm font-bold text-emerald-950 hover:bg-white transition-colors"
+            data-toggle="details"
+            data-target="detalles-bachillerato"
+            aria-controls="detalles-bachillerato"
+            aria-expanded="false"
+          >
+            Descubrir Ventajas
+          </button>
+
+          <div
+            id="detalles-bachillerato"
+            class="details-content mt-4 text-sm text-gray-200"
+          >
+            <!-- Placeholders para los 10 detalles de Bachillerato -->
+            <ul class="list-disc pl-5 space-y-1">
+              <li>
+                Terminas rápido En solo 10 semanas puedes obtener tu
+                certificado, sin perder años en el proceso.
+              </li>
+              <li>
+                Sin exámenes estresantes Aprendes sin presión de evaluaciones
+                tradicionales, ideal si hace tiempo que no estudias.
+              </li>
+              <li>
+                100% en línea Estudias desde casa, trabajo o cualquier lugar con
+                internet.
+              </li>
+              <li>
+                Horarios totalmente flexibles Tú decides cuándo avanzar,
+                perfecto si trabajas o tienes familia.
+              </li>
+              <li>
+                Ideal para adultos El programa está diseñado específicamente
+                para personas mayores que desean terminar su bachillerato.
+              </li>
+              <li>
+                Avance a tu propio ritmo No dependes de grupos, puedes avanzar
+                más rápido según tu disponibilidad.
+              </li>
+              <li>
+                Mejoras tus oportunidades laborales Tener bachillerato concluida
+                te permite aspirar a mejores empleos y sueldos.
+              </li>
+              <li>
+                Acceso a universidad Es el primer paso para seguir estudiando
+                una carrera o un oficio técnico.
+              </li>
+              <li>
+                Ahorro de tiempo y dinero Sin traslados, sin uniformes, sin
+                gastos extras.
+              </li>
+              <li>
+                Certificado con validez oficial Tu documento tiene
+                reconocimiento legal, válido para trabajos y trámites.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .details-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition:
+      max-height 280ms ease,
+      opacity 220ms ease;
+  }
+
+  .details-content.open {
+    /* suficientemente grande para contener la lista de 10 items */
+    max-height: 800px;
+    opacity: 1;
+  }
+
+  /* Ajuste para que la apertura parezca suave incluso en móviles */
+  @media (prefers-reduced-motion: reduce) {
+    .details-content {
+      transition: none;
+    }
+  }
+</style>
+
+<script type="module">
+  // Progressive enhancement: toggles the 'open' class and updates aria attributes
+  document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll('button[data-toggle="details"]');
+
+    buttons.forEach((btn) => {
+      const targetId = btn.getAttribute("data-target");
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      // Start collapsed
+      target.classList.remove("open");
+      btn.addEventListener("click", () => {
+        const isOpen = target.classList.toggle("open");
+        btn.setAttribute("aria-expanded", String(isOpen));
+        btn.textContent = isOpen ? "Ocultar detalles" : "Ver Detalles";
+        // If opening, scroll a little so the content is visible on small screens
+        if (isOpen) {
+          setTimeout(() => {
+            target.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }, 120);
+        }
+      });
+    });
+  });
+</script>
