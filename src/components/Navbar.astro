@@ -1,0 +1,80 @@
+---
+import Birrete from "./icons/Birrete.astro";
+---
+
+<header class="sticky top-0 z-50 bg-white/95 shadow-lg backdrop-blur-md">
+  <!-- toggle input must be a sibling before the menu so Tailwind's peer works -->
+  <input
+    id="nav-toggle"
+    class="peer sr-only"
+    type="checkbox"
+    aria-hidden="true"
+  />
+
+  <nav
+    class="max-w-6xl mx-auto flex items-center justify-between gap-4 px-4 py-3 md:py-4"
+  >
+    <!-- Brand -->
+    <div class="flex items-center gap-3 shrink-0">
+      <div class="p-2 bg-green-950 rounded-full text-white">
+        <Birrete />
+      </div>
+      <h1 class="text-green-950 font-black text-lg md:text-xl">
+        Instituto CreSer Conecta
+      </h1>
+    </div>
+
+    <!-- Centered links (hidden on small screens) -->
+    <div class="flex-1 flex justify-center">
+      <div class="hidden md:flex items-center gap-8 text-gray-900">
+        <a class="hover:text-green-950" href="#">Inicio</a>
+        <a class="hover:text-green-950" href="#">Programas</a>
+        <a class="hover:text-green-950" href="#">Oferta Especial</a>
+        <a class="hover:text-green-950" href="#">Contacto</a>
+      </div>
+    </div>
+
+    <!-- Actions + hamburger -->
+    <div class="flex items-center gap-3">
+      <a
+        class="hidden md:inline-block py-2 px-6 bg-green-950 rounded-full text-white font-bold"
+        href="#">Regístrate Ahora</a
+      >
+
+      <!-- Hamburger button (visible on small screens) -->
+      <label
+        for="nav-toggle"
+        class="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-900 hover:bg-gray-100 focus:outline-none"
+        aria-label="Abrir menú"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </label>
+    </div>
+  </nav>
+
+  <!-- Mobile menu: shown when #nav-toggle is checked -->
+  <div class="peer-checked:block hidden md:hidden border-t bg-white">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-3">
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Inicio</a>
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Programas</a>
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Oferta Especial</a>
+      <a class="py-2 px-3 rounded hover:bg-gray-50" href="#">Contacto</a>
+      <a
+        class="mt-2 py-3 px-4 bg-green-950 text-white rounded text-center font-bold"
+        href="#">Regístrate Ahora</a
+      >
+    </div>
+  </div>
+</header>

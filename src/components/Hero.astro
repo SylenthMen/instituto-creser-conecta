@@ -1,0 +1,225 @@
+---
+import Check from './icons/Check.astro';
+import Identificacion from './icons/Identificacion.astro';
+// Component props (opcional)
+interface Props {
+  images?: string[];
+}
+
+const { images = [
+  '/hero1.png',
+  '/hero2.jpg',
+  '/hero3.jpg',
+//   '/images/students4.jpg'
+] } = Astro.props;
+---
+
+<section class="bg-gray-100 py-12 md:py-20 px-4 md:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+      
+      <!-- Contenido Izquierdo -->
+      <div class="space-y-6">
+        <!-- Badge -->
+        <div class="inline-flex items-center gap-2 bg-cyan-400/10 text-gray-900 px-3 py-1 rounded-full border-2 border-cyan-500">
+          <span class="w-2 h-2 bg-black rounded-full"></span>
+          <span class="text-sm font-medium">Inscripciones Abiertas 2025</span>
+        </div>
+
+        <!-- Título -->
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight">
+          Termina Tu <span class="underline text-cyan-400">Bachillerato</span> Hoy. Define Tu Futuro.
+        </h1>
+
+        <!-- Descripción -->
+        <p class="text-base md:text-lg text-gray-600 leading-relaxed">
+          Únete a nuestros programas flexibles diseñados para tu crecimiento y éxito. Ya sea que estés regresando a la educación o buscando acelerar tu camino, tenemos las herramientas que necesitas.
+        </p>
+
+        <!-- Información Cards -->
+        <div class="border-2 border-r-8 border-b-8 border-cyan-400/50 rounded-2xl p-6 inline-block ">
+          <div class="flex flex-wrap gap-8">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-cyan-400/10 rounded-full text-gray-900 flex items-center justify-center">
+                <Check />
+              </div>
+              <div>
+                <p class="text-xs text-green-950">RVOE</p>
+                <p class="text-sm text-green-950 font-black">EMS1152020</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 bg-cyan-400/10 rounded-full text-gray-900 flex items-center justify-center">
+                <Identificacion />
+              </div>
+              <div>
+                <p class="text-xs text-green-950">CLAVE CENTRO</p>
+                <p class="font-black text-sm text-green-950">17PBH0141R</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botones -->
+        <div class="flex flex-wrap gap-4 pt-4">
+          <button class="bg-green-950 text-white px-8 py-3 rounded-full font-medium hover:bg-green-800 cursor-pointer transition-colors">
+            Explorar Programas
+          </button>
+          <a href="#" class="border-2 border-gray-300 text-gray-900 px-8 py-3 rounded-full font-medium hover:bg-gray-50 transition-colors">
+            Contactar Asesor
+          </a>
+        </div>
+
+        <!-- Estadísticas -->
+        <div class="flex gap-12 pt-8">
+          <div>
+            <p class="text-3xl md:text-4xl font-bold text-gray-900">5k+</p>
+            <p class="text-sm text-gray-600 mt-1">Graduados</p>
+          </div>
+          <div>
+            <p class="text-3xl md:text-4xl font-bold text-gray-900">7+</p>
+            <p class="text-sm text-gray-600 mt-1">Años Exp.</p>
+          </div>
+          <!-- <div>
+            <p class="text-3xl md:text-4xl font-bold text-gray-900">3</p>
+            <p class="text-sm text-gray-600 mt-1">Campus</p>
+          </div> -->
+        </div>
+      </div>
+
+      <!-- Carrusel Derecho -->
+      <div class="relative">
+        <div id="carousel" class="relative overflow-hidden rounded-3xl shadow-2xl">
+          <!-- Slides -->
+          <div id="carousel-inner" class="flex transition-transform duration-500 ease-in-out">
+            {images.map((image, index) => (
+              <div class="min-w-full relative">
+                <img 
+                  src={image} 
+                  alt={`Estudiantes ${index + 1}`}
+                  class="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover"
+                />
+                <!-- Badge sobre la imagen -->
+                <div class="absolute bottom-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2">
+                  <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
+                  </svg>
+                  <span class="text-sm font-medium text-gray-900">Educación Certificada</span>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <!-- Controles de navegación -->
+          <button 
+            id="prev"
+            class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all"
+            aria-label="Anterior"
+          >
+            <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+            </svg>
+          </button>
+          
+          <button 
+            id="next"
+            class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full shadow-lg transition-all"
+            aria-label="Siguiente"
+          >
+            <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+            </svg>
+          </button>
+
+          <!-- Indicadores -->
+          <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+            {images.map((_, index) => (
+              <button
+                class="indicator w-2 h-2 rounded-full bg-white/50 hover:bg-white transition-all"
+                data-index={index}
+                aria-label={`Ir a imagen ${index + 1}`}
+              ></button>
+            ))}
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const carouselInner = document.getElementById('carousel-inner') as HTMLElement;
+  const prevBtn = document.getElementById('prev') as HTMLButtonElement;
+  const nextBtn = document.getElementById('next') as HTMLButtonElement;
+  const indicators = document.querySelectorAll('.indicator') as NodeListOf<HTMLButtonElement>;
+  
+  let currentIndex = 0;
+  const totalSlides = indicators.length;
+  let autoplayInterval: number;
+
+  function updateCarousel() {
+    carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    
+    indicators.forEach((indicator, index) => {
+      if (index === currentIndex) {
+        indicator.classList.remove('bg-white/50');
+        indicator.classList.add('bg-white', 'w-8');
+      } else {
+        indicator.classList.remove('bg-white', 'w-8');
+        indicator.classList.add('bg-white/50');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(index: number) {
+    currentIndex = index;
+    updateCarousel();
+    resetAutoplay();
+  }
+
+  function startAutoplay() {
+    autoplayInterval = window.setInterval(nextSlide, 5000);
+  }
+
+  function resetAutoplay() {
+    clearInterval(autoplayInterval);
+    startAutoplay();
+  }
+
+  nextBtn?.addEventListener('click', () => {
+    nextSlide();
+    resetAutoplay();
+  });
+
+  prevBtn?.addEventListener('click', () => {
+    prevSlide();
+    resetAutoplay();
+  });
+
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => goToSlide(index));
+  });
+
+  // Iniciar autoplay
+  startAutoplay();
+
+  // Pausar en hover
+  const carousel = document.getElementById('carousel');
+  carousel?.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+  carousel?.addEventListener('mouseleave', startAutoplay);
+
+  // Inicializar
+  updateCarousel();
+</script>
